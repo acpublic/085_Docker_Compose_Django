@@ -10,3 +10,8 @@ sudo chown -R $USER:$USER mysite manage.py
 ```
 docker-compose up
 ```
+## コンテナ内
+```
+docker container exec -it docker-web-1 /bin/bash
+```
+
