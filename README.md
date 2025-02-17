@@ -14,7 +14,7 @@ docker-compose up
 ```
 docker container exec -it docker-web-1 /bin/bash
 ```
-## Database の設定
+## Database設定
 https://docs.djangoproject.com/ja/5.0/ref/settings/#databases
 ### mysite/settings.py
 ```
@@ -28,13 +28,13 @@ DATABASES = {
 - django.db.backends.postgresql
 - django.db.backends.mysql
 - django.db.backends.sqlite3
-- django.db.backends.oracle]
+- django.db.backends.oracle
 
 ```
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 ```
-## Database の設定
+## DBファイル作成
 ```
 python manage.py migrate
 ```
