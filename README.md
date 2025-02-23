@@ -56,5 +56,5 @@ http://127.0.0.1:8000/admin/
 
 ## 管理ユーザーを作成
 ```
-$ python manage.py createsuperuser
+python manage.py createsuperuser
 ```
