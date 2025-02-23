@@ -58,3 +58,10 @@ http://127.0.0.1:8000/admin/
 ```
 python manage.py createsuperuser
 ```
+## admin 上で編集できるようにする
+polls/admin.py
+```python
+from django.contrib import admin
+from .models import Question
+admin.site.register(Question)
+```
