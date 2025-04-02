@@ -42,14 +42,40 @@ DATABASES = {
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 ```
-## DBファイル作成
+
+## テンプレート
+- templates/index.htmlを作成
+```python
+TEMPLATES = [
+    {
+    'DIRS': [BASE_DIR / "templates"],
+    }
+]
+```
+```python
+INSTALLED_APPS = [
+    'diary.apps.DiaryConfig',
+}
+```
+- model.py
+```python
+class Page(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=100)
+    body = models.TextField(max_length=2000)
+    page_date = models.DateField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+```
+- マイグレーション用ファイル作成
+```
+python manage.py makemigrations
+```
+## DBテーブル作成
 ```
 python manage.py migrate
 ```
-## マイグレーション用のファイルを作成
-```
-python manage.py makemigrations diary
-```
+
 
 ## 管理サイト
 http://127.0.0.1:8000/admin/ 
