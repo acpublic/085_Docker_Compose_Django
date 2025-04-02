@@ -17,7 +17,7 @@ docker container exec -it docker-web-1 /bin/bash
 
 ## アプリケーション作成
 ```
-$ python manage.py startapp polls
+$ python manage.py startapp diary
 ```
 - プロジェクト：アプリ本体
 - アプリケーション：機能
@@ -48,7 +48,7 @@ python manage.py migrate
 ```
 ## マイグレーション用のファイルを作成
 ```
-python manage.py makemigrations polls
+python manage.py makemigrations diary
 ```
 
 ## 管理サイト
