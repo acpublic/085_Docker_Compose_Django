@@ -93,7 +93,8 @@ admin.site.register(Question)
 ```
 
 ## CSSとjavascriptを使えるようにする
-- static/css,static/cssを作成
+- static/cssを作成
+- static/jsを作成
 - settings.pyに追加
 ```python
 STATIC_URL = 'static/'
