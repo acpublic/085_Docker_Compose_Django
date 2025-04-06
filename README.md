@@ -6,9 +6,22 @@ sudo docker-compose run web django-admin startproject mysite .
 ```
 sudo chown -R $USER:$USER mysite manage.py
 ```
-## Django起動
+## イメージ作成
 ```
 docker-compose up
+```
+## コンテナ起動
+```
+docker start <container_id>
+```
+## コンテナ停止
+```
+docker stop <container_id>
+```
+## コンテナ内ログ
+```
+docker ps
+docker logs <container_id>
 ```
 ## コンテナ内
 ```
