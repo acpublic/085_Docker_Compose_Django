@@ -75,7 +75,8 @@ python manage.py makemigrations
 ```
 python manage.py migrate
 ```
-
+### 動作しない場合
+- db.sqlite3ファイル削除
 
 ## 管理サイト
 http://127.0.0.1:8000/admin/ 
