@@ -90,8 +90,8 @@ python manage.py createsuperuser
 - polls/admin.py
 ```python
 from django.contrib import admin
-from .models import Question
-admin.site.register(Question)
+from .models import Page
+admin.site.register(Page)
 ```
 
 ## CSSとjavascriptを使えるようにする
