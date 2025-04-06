@@ -109,5 +109,29 @@ STATICFILES_DIRS = [
     {% load static %}
 </head>
 ```
+## GET/POSTリクエスト
+- html
+```html
+<form method="POST" action="{% url 'diary:send' %}">
+    {% csrf_token %}
+    <input type="submit" value="送信">
+</form>
+```
+- view.py
+```python
+class SendView(View):
+    def get(self, request):
+        return HttpResponse("GETリクエストが送信されました！")
 
-
+    def post(self, request):
+        # POSTリクエストの処理
+        return HttpResponse("POSTリクエストが送信されました！")
+        
+send = SendView.as_view()
+```
+- urls.py
+```python
+urlpatterns = [
+    path("post/", views.send, name="send"),
+]
+```
