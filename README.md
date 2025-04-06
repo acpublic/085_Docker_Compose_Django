@@ -81,6 +81,7 @@ python manage.py migrate
 http://127.0.0.1:8000/admin/ 
 
 ## 管理ユーザーを作成
+- https://docs.djangoproject.com/ja/5.1/intro/tutorial02/#introducing-the-django-admin
 ```
 python manage.py createsuperuser
 ```
