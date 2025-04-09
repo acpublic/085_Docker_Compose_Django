@@ -80,6 +80,11 @@ class Page(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 ```
+- admin.py
+```python
+from .models import Page
+admin.site.register(Page)
+```
 - マイグレーション用ファイル作成
 ```
 python manage.py makemigrations
@@ -149,4 +154,35 @@ send = SendView.as_view()
 urlpatterns = [
     path("post/", views.send, name="send"),
 ]
+```
+## ログイン機能
+- settings.py
+```python
+urlpatterns = [
+    path("post/", views.send, name="send"),
+]
+```
+- urls.py
+```python
+urlpatterns = [
+    path('login/',LoginView.as_view(), name='login'),
+    path('logout/',LogoutView.as_view(), name='logout'),
+]
+```
+- template/registration/login.html
+```html
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">ログイン</button>
+    </form>
+</body>
+]
+```
+- ログイン状態
+```html
+{% if user.is_authenticated %}
+{% else %}
+{% endif %}
 ```
