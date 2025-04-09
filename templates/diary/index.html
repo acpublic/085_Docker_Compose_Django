@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <title>サイト</title>
+    {% load static %}
+    <script src="{% static 'js/base.js' %}"></script>
+</head>
+
+<body>
+    <h1>勤怠</h1>
+
+    <p id="currentTime"></p>
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url 'diary:send' %}">
+        {% csrf_token %}
+        <input type="submit" value="打刻">
+    </form>
+    <br>
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">ログアウト</button>
+    </form>
+    {% else %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <button type="submit">ログイン</button>
+    </form>
+    {% endif %}
+</body>
+
+</html>
