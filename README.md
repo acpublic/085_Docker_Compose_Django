@@ -20,7 +20,6 @@ docker stop <container_id>
 ```
 ## コンテナ内ログ
 ```
-docker ps
 docker logs <container_id>
 ```
 ## コンテナ内
